@@ -1,6 +1,6 @@
-import { Card, Grid, Typography } from "@mui/material";
+import { Unity, useUnityContext } from 'react-unity-webgl';
+import { Card, Grid, Typography } from '@mui/material';
 
-import { Unity, useUnityContext } from "react-unity-webgl";
 // import Paper from '@mui/material/Paper';
 // import Stack from '@mui/material/Stack';
 // import paths from 'routes/paths';
@@ -8,13 +8,11 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 // import PageHeader from 'components/sections/user-table/PageHeader';
 
 const UnityWebGL = () => {
-    const {
-    unityProvider,
-  } = useUnityContext({
-    loaderUrl: "/blog/assets/webgls/build/Build/build.loader.js",
-    dataUrl: "/blog/assets/webgls/build/Build/build.data",
-    frameworkUrl: "/blog/assets/webgls/build/Build/build.framework.js",
-    codeUrl: "/blog/assets/webgls/build/Build/build.wasm",
+  const { unityProvider } = useUnityContext({
+    loaderUrl: '/blog/assets/webgls/build/Build/build.loader.js',
+    dataUrl: '/blog/assets/webgls/build/Build/build.data',
+    frameworkUrl: '/blog/assets/webgls/build/Build/build.framework.js',
+    codeUrl: '/blog/assets/webgls/build/Build/build.wasm',
   });
 
   return (
@@ -29,8 +27,8 @@ const UnityWebGL = () => {
       </Grid>
       <Card>
         <Grid>
-          <div style={{ width: "100%", height: "70vh" }}>
-            <Unity unityProvider={unityProvider} style={{ width: "100%", height: "100%" }} />
+          <div style={{ width: '100%', height: '70vh' }}>
+            <Unity unityProvider={unityProvider} style={{ width: '100%', height: '100%' }} />
           </div>
         </Grid>
       </Card>
