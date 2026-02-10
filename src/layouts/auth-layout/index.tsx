@@ -6,6 +6,7 @@ import Image from 'components/base/Image';
 import Logo from 'components/common/Logo';
 import image from '/assets/images/illustrations/3.webp';
 
+// 인증페이지
 const AuthLayout = ({ children }: PropsWithChildren) => {
   return (
     <Grid

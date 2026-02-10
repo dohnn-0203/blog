@@ -29,6 +29,7 @@ interface ProfileMenuItemProps extends MenuItemProps {
   sx?: SxProps;
 }
 
+// 프로필 메뉴
 const ProfileMenu = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

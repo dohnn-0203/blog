@@ -10,6 +10,7 @@ import NavProvider from './NavProvider';
 import Footer from './footer';
 import SidenavDrawerContent from './sidenav/SidenavDrawerContent';
 
+// 메인페이지
 const MainLayout = ({ children }: PropsWithChildren) => {
   const {
     config: { drawerWidth, openNavbarDrawer },
@@ -27,9 +28,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       <Box sx={{ display: 'flex', zIndex: 1, position: 'relative' }}>
         <NavProvider>
           <AppBar />
-
           <Sidenav />
-
           <Drawer
             variant="temporary"
             open={openNavbarDrawer}

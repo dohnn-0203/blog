@@ -1,9 +1,10 @@
 import { ReactElement } from 'react';
 import { Stack, SxProps } from '@mui/material';
-import LanguageMenu from './LanguageMenu';
-import NotificationMenu from './NotificationMenu';
 import ProfileMenu from './ProfileMenu';
 import ThemeToggler from './ThemeToggler';
+
+// import LanguageMenu from './LanguageMenu';
+// import NotificationMenu from './NotificationMenu';
 
 interface AppbarActionItemsProps {
   sx?: SxProps;
@@ -22,9 +23,9 @@ const AppbarActionItems = ({ sx, searchComponent }: AppbarActionItemsProps) => {
       }}
     >
       {searchComponent}
-      <LanguageMenu />
+      {/* <LanguageMenu /> */}
+      {/* <NotificationMenu /> */}
       <ThemeToggler />
-      <NotificationMenu />
       <ProfileMenu />
     </Stack>
   );

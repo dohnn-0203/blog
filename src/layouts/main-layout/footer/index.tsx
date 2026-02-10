@@ -1,5 +1,4 @@
-import { Box, Divider, Link, Stack, Typography } from '@mui/material';
-import dayjs from 'dayjs';
+import { Box, Divider, Stack, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
@@ -34,24 +33,7 @@ const Footer = () => {
           }}
         >
           <Box component="span" whiteSpace="nowrap">
-            Thank you for creating with
-            <Box component="strong" mx={0.5}>
-              Aurora{' '}
-            </Box>
-          </Box>
-
-          <Box component="span" whiteSpace="nowrap">
-            <Box component="span" display={{ xs: 'none', sm: 'inline' }}>
-              |
-            </Box>{' '}
-            {dayjs().year()} ©
-            <Link
-              href="https://themewagon.com/"
-              target="_blank"
-              sx={{ textDecoration: 'none', mx: 0.5 }}
-            >
-              ThemeWagon
-            </Link>
+            Thank you
           </Box>
         </Typography>
 

@@ -6,7 +6,8 @@ import { useSettingsContext } from 'providers/SettingsProvider';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Logo from 'components/common/Logo';
 import AppbarActionItems from '../common/AppbarActionItems';
-import SearchBox, { SearchBoxButton } from '../common/search-box/SearchBox';
+
+// import SearchBox, { SearchBoxButton } from '../common/search-box/SearchBox';
 
 const AppBar = () => {
   const {
@@ -16,7 +17,7 @@ const AppBar = () => {
 
   const { up } = useBreakpoints();
   const upSm = up('sm');
-  const upMd = up('md');
+  // const upMd = up('md');
 
   return (
     <MuiAppBar
@@ -61,16 +62,7 @@ const AppBar = () => {
             flex: 1,
           }}
         >
-          {upMd ? (
-            <SearchBox
-              sx={{
-                width: 1,
-                maxWidth: 420,
-              }}
-            />
-          ) : (
-            <SearchBoxButton />
-          )}
+          {/* 오른쪽 상단 버튼(메인) */}
           <AppbarActionItems />
         </Stack>
       </Toolbar>

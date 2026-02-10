@@ -15,6 +15,7 @@ import { presetOptions } from 'data/color-presets';
 import IconifyIcon from 'components/base/IconifyIcon';
 import ProSnackbar from './ProSnackbar';
 
+// 화면 색상 선택
 const ThemeToggler = () => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
