@@ -53,6 +53,7 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
             },
           ]}
         >
+          {/* 왼쪽 아이콘 */}
           <Logo showName={expanded} />
           <IconButton sx={{ mt: 1, display: { md: 'none' } }} onClick={toggleNavbarDrawer}>
             <IconifyIcon icon="material-symbols:left-panel-close-outline" fontSize={20} />

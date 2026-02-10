@@ -1,18 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Link, SvgIcon, SvgIconProps, Typography, typographyClasses } from '@mui/material';
+import { Link, SvgIconProps, Typography, typographyClasses } from '@mui/material';
 import { rootPaths } from 'routes/paths';
 
 interface LogoProps extends SvgIconProps {
   showName?: boolean;
 }
 
-const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps) => {
-  const [id, setId] = useState('logo');
-
-  useEffect(() => {
-    setId(`logo-${Math.floor(Math.random() * 1000) + 1}`);
-  }, []);
-
+const Logo = ({ showName = true }: LogoProps) => {
   return (
     <Link
       href={rootPaths.root}
@@ -27,7 +20,7 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
         },
       }}
     >
-      <SvgIcon
+      {/* <SvgIcon
         viewBox={viewBox}
         sx={{
           height: 40,
@@ -128,7 +121,7 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
             <stop offset="1" stopColor="#20DE99" />
           </linearGradient>
         </defs>
-      </SvgIcon>
+      </SvgIcon> */}
       {showName && (
         <Typography
           sx={{
@@ -148,7 +141,7 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
             transition: 'background-position .3s cubic-bezier(0.8, 0.63, .5, 1)',
           }}
         >
-          aurora
+          RIRI
         </Typography>
       )}
     </Link>
