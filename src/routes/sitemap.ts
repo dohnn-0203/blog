@@ -32,9 +32,9 @@ const sitemap: MenuItem[] = [
     icon: 'material-symbols:view-quilt-outline',
     items: [
       {
-        name: 'Dashboard',
+        name: 'MainPage',
         path: rootPaths.root,
-        pathName: 'dashboard',
+        pathName: 'mainpage',
         icon: 'material-symbols:query-stats-rounded',
         active: true,
       },

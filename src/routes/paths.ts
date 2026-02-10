@@ -1,5 +1,3 @@
-import { documentationPath } from 'lib/constants';
-
 export const rootPaths = {
   root: '/',
   authRoot: 'auth',
@@ -8,13 +6,13 @@ export const rootPaths = {
 const paths = {
   root: rootPaths.root,
   unitywebgl: `/unity`,
-  starter: `/starter`,
-  users: `/users`,
-  account: `/account`,
   login: `/${rootPaths.authRoot}/login`,
   signup: `/${rootPaths.authRoot}/sign-up`,
-  notifications: `/notifications`,
-  documentation: documentationPath,
+  // starter: `/starter`,
+  // users: `/users`,
+  // account: `/account`,
+  // notifications: `/notifications`,
+  // documentation: documentationPath,
 
   404: `/404`,
 };

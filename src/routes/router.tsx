@@ -3,19 +3,20 @@ import { Outlet, RouteObject, createBrowserRouter, useLocation } from 'react-rou
 import App from 'App';
 import AuthLayout from 'layouts/auth-layout';
 import MainLayout from 'layouts/main-layout';
-import Page404 from 'pages/errors/Page404';
+import Page404 from 'sample-pages/errors/Page404';
 import PageLoader from 'components/loading/PageLoader';
 import paths, { rootPaths } from './paths';
 
-const Analytics = lazy(() => import('pages/dashboard/Analytics'));
-const UserList = lazy(() => import('pages/users/UserList'));
-const Starter = lazy(() => import('pages/others/Starter'));
-const Account = lazy(() => import('pages/others/Account'));
-
-const Login = lazy(() => import('pages/authentication/Login'));
-const Signup = lazy(() => import('pages/authentication/Signup'));
-
 const UnityWebGL = lazy(() => import('pages/unity-wabgl/unity'));
+const MainPage = lazy(() => import('pages/mainpage/mainpage'));
+
+// const Analytics = lazy(() => import('sample-pages/dashboard/Analytics'));
+// const UserList = lazy(() => import('sample-pages/users/UserList'));
+// const Starter = lazy(() => import('sample-pages/others/Starter'));
+// const Account = lazy(() => import('sample-pages/others/Account'));
+
+const Login = lazy(() => import('sample-pages/authentication/Login'));
+const Signup = lazy(() => import('sample-pages/authentication/Signup'));
 
 export const SuspenseOutlet = () => {
   const location = useLocation();
@@ -41,24 +42,24 @@ export const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: <Analytics />,
+            element: <MainPage />,
           },
           {
             path: paths.unitywebgl,
             element: <UnityWebGL />,
           },
-          {
-            path: paths.users,
-            element: <UserList />,
-          },
-          {
-            path: paths.account,
-            element: <Account />,
-          },
-          {
-            path: paths.starter,
-            element: <Starter />,
-          },
+          // {
+          //   path: paths.users,
+          //   element: <UserList />,
+          // },
+          // {
+          //   path: paths.account,
+          //   element: <Account />,
+          // },
+          // {
+          //   path: paths.starter,
+          //   element: <Starter />,
+          // },
         ],
       },
       {
