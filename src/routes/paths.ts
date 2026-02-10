@@ -7,6 +7,7 @@ export const rootPaths = {
 
 const paths = {
   root: rootPaths.root,
+  unitywebgl: `/unity`,
   starter: `/starter`,
   users: `/users`,
   account: `/account`,

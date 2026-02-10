@@ -15,6 +15,8 @@ const Account = lazy(() => import('pages/others/Account'));
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
 
+const UnityWebGL = lazy(() => import('pages/unity-wabgl/unity'));
+
 export const SuspenseOutlet = () => {
   const location = useLocation();
 
@@ -40,6 +42,10 @@ export const routes: RouteObject[] = [
           {
             index: true,
             element: <Analytics />,
+          },
+          {
+            path: paths.unitywebgl,
+            element: <UnityWebGL />,
           },
           {
             path: paths.users,

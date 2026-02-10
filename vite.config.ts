@@ -28,6 +28,6 @@ export default ({ mode }) => {
       host: '0.0.0.0',
       port: Number(process.env.VITE_APP_PORT || 5005),
     },
-    base: '/blog/',
+    base: '/blog',
   });
 };
