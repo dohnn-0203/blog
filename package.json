@@ -2,6 +2,7 @@
   "name": "aurora-free",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://dohnn-0203.github.io/blog/",
   "type": "module",
   "scripts": {
     "start": "vite",
@@ -10,7 +11,7 @@
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "pretty": "prettier --write .",
-    "predeploy": "vite build && cp ./dist/index.html ./dist/404.html",
+    "predeploy": "vite build && shx cp ./dist/index.html ./dist/404.html",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -58,6 +59,7 @@
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "sass": "^1.93.2",
+    "shx": "0.4.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.1",
     "vite": "^7.1.11",
