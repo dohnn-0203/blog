@@ -1,8 +1,5 @@
 import { useMemo } from 'react';
-import { Divider, IconButton } from '@mui/material';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Toolbar from '@mui/material/Toolbar';
+import { Box, Divider, IconButton, List, Toolbar, Typography } from '@mui/material';
 import { useSettingsContext } from 'providers/SettingsProvider';
 import sitemap from 'routes/sitemap';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -22,13 +19,11 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
 
   const expanded = useMemo(
     () => variant === 'temporary' || (variant === 'permanent' && !sidenavCollapsed),
-    [sidenavCollapsed],
+    [variant, sidenavCollapsed],
   );
 
   const toggleNavbarDrawer = () => {
-    setConfig({
-      openNavbarDrawer: !openNavbarDrawer,
-    });
+    setConfig({ openNavbarDrawer: !openNavbarDrawer });
   };
 
   return (
@@ -43,9 +38,7 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
               alignItems: 'center',
             },
             !expanded && {
-              display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center',
             },
             expanded && {
               pl: { xs: 4, md: 6 },
@@ -53,13 +46,13 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
             },
           ]}
         >
-          {/* 왼쪽 아이콘 */}
           <Logo showName={expanded} />
           <IconButton sx={{ mt: 1, display: { md: 'none' } }} onClick={toggleNavbarDrawer}>
             <IconifyIcon icon="material-symbols:left-panel-close-outline" fontSize={20} />
           </IconButton>
         </Box>
       </Toolbar>
+
       <Box sx={{ flex: 1, overflow: 'hidden' }}>
         <SidenavSimpleBar>
           <Box
@@ -79,18 +72,28 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
             ]}
           >
             <div>
-              {sitemap.map((menu) => (
+              {sitemap.map((menu, idx) => (
                 <Box key={menu.id}>
-                  {menu.subheader === 'Docs' && !sidenavCollapsed && (
-                    <>
-                      <Divider sx={{ mb: 4 }} />
-                    </>
+                  {menu.subheader && expanded && (
+                    <Typography
+                      sx={{
+                        px: 1,
+                        pt: idx === 0 ? 0 : 2,
+                        pb: 1,
+                        fontSize: 12,
+                        fontWeight: 700,
+                        letterSpacing: 0.8,
+                        color: 'text.disabled',
+                      }}
+                    >
+                      {menu.subheader.toUpperCase()}
+                    </Typography>
                   )}
+
                   <List
                     dense
-                    key={menu.id}
                     sx={{
-                      mb: 3,
+                      mb: idx === sitemap.length - 1 ? 0 : 2,
                       pb: 0,
                       display: 'flex',
                       flexDirection: 'column',
@@ -101,11 +104,13 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
                       <NavItem key={item.pathName} item={item} level={0} />
                     ))}
                   </List>
+
+                  {idx !== sitemap.length - 1 && expanded && (
+                    <Divider sx={{ mx: 1, my: 1.5, borderColor: 'divider' }} />
+                  )}
                 </Box>
               ))}
             </div>
-            {/* 아래는 구매 광고 */}
-            {/* {!sidenavCollapsed && <PromoCard img={promo} imgStyles={{ maxWidth: 136 }} />} */}
           </Box>
         </SidenavSimpleBar>
       </Box>

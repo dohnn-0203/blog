@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget } from 'react';
 import { SxProps } from '@mui/material';
-import paths, { rootPaths } from './paths';
+import { rootPaths } from './paths';
 
 export interface SubMenuItem {
   name: string;
@@ -17,7 +17,7 @@ export interface SubMenuItem {
 
 export interface MenuItem {
   id: string;
-  key?: string; // used for the locale
+  key?: string;
   subheader?: string;
   icon: string;
   target?: HTMLAttributeAnchorTarget;
@@ -28,152 +28,41 @@ export interface MenuItem {
 // 실제 화면에 보이는 라우트
 const sitemap: MenuItem[] = [
   {
-    id: 'pages',
+    id: 'menu',
+    subheader: 'MENU',
     icon: 'material-symbols:view-quilt-outline',
     items: [
       {
-        name: 'MainPage',
+        name: 'Home',
         path: rootPaths.root,
-        pathName: 'mainpage',
-        icon: 'material-symbols:query-stats-rounded',
-        active: true,
+        pathName: 'home',
+        icon: 'material-symbols:home-outline',
       },
+    ],
+  },
+  {
+    id: 'projects',
+    subheader: 'PROJECTS',
+    icon: 'material-symbols:view-quilt-outline',
+    items: [
       {
         name: 'Unity-WebGL',
-        path: paths.unitywebgl,
-        pathName: 'Unity',
-        icon: 'material-symbols:query-stats-rounded',
-        active: true,
+        path: '/Unity',
+        pathName: 'unity',
+        icon: 'material-symbols:deployed-code-outline',
       },
-      // {
-      //   name: 'Users',
-      //   path: paths.users,
-      //   pathName: 'users',
-      //   icon: 'material-symbols:account-box-outline',
-      //   active: true,
-      // },
-      // {
-      //   name: 'Account',
-      //   key: 'account',
-      //   path: paths.account,
-      //   pathName: 'account',
-      //   active: true,
-      //   icon: 'material-symbols:admin-panel-settings-outline-rounded',
-      // },
-      // {
-      //   name: 'Starter',
-      //   path: paths.starter,
-      //   pathName: 'starter',
-      //   icon: 'material-symbols:play-circle-outline-rounded',
-      //   active: true,
-      // },
-      // {
-      //   name: 'Error 404',
-      //   pathName: 'error',
-      //   active: true,
-      //   icon: 'material-symbols:warning-outline-rounded',
-      //   path: paths[404],
-      // },
-      // {
-      //   name: 'Login',
-      //   icon: 'material-symbols:login',
-      //   path: paths.login,
-      //   pathName: 'login',
-      //   active: true,
-      // },
-      // {
-      //   name: 'Sign up',
-      //   icon: 'material-symbols:person-add-outline',
-      //   path: paths.signup,
-      //   pathName: 'sign-up',
-      //   active: true,
-      // },
-      // {
-      //   name: 'Documentation',
-      //   icon: 'material-symbols:description-outline-rounded',
-      //   path: paths.documentation,
-      //   pathName: 'documentation',
-      //   active: true,
-      //   target: '_blank',
-      // },
-      // {
-      //   name: 'Multi level',
-      //   pathName: 'multi-level',
-      //   icon: 'material-symbols:layers-outline-rounded',
-      //   active: true,
-      //   items: [
-      //     {
-      //       name: 'Level two (1)',
-      //       path: '#!',
-      //       pathName: 'multi-level-2',
-      //       active: true,
-      //     },
-      //     {
-      //       name: 'Level two (2)',
-      //       pathName: 'multi-level-3',
-      //       active: true,
-      //       items: [
-      //         {
-      //           name: 'Level three (1)',
-      //           path: '#!',
-      //           pathName: 'multi-level-item-3',
-      //           active: true,
-      //         },
-      //         {
-      //           name: 'Level three (2)',
-      //           path: '#!',
-      //           pathName: 'multi-level-item-4',
-      //           active: true,
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       name: 'Level two (3)',
-      //       pathName: 'multi-level-4',
-      //       active: true,
-      //       items: [
-      //         {
-      //           name: 'Level three (3)',
-      //           path: '#!',
-      //           pathName: 'multi-level-item-6',
-      //           active: true,
-      //         },
-      //         {
-      //           name: 'Level three (4)',
-      //           pathName: 'multi-level-item-7',
-      //           active: true,
-      //           items: [
-      //             {
-      //               name: 'Level four (1)',
-      //               path: '#!',
-      //               pathName: 'multi-level-item-8',
-      //               active: true,
-      //             },
-      //             {
-      //               name: 'Level four (2)',
-      //               pathName: 'multi-level-item-9',
-      //               active: true,
-      //               items: [
-      //                 {
-      //                   name: 'Level five (1)',
-      //                   path: '#!',
-      //                   pathName: 'multi-level-item-10',
-      //                   active: true,
-      //                 },
-      //                 {
-      //                   name: 'Level five (2)',
-      //                   path: '#!',
-      //                   pathName: 'multi-level-item-11',
-      //                   active: true,
-      //                 },
-      //               ],
-      //             },
-      //           ],
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // },
+      {
+        name: 'Nimbus CMS',
+        path: '/nimbus',
+        pathName: 'nimbus',
+        icon: 'material-symbols:deployed-code-outline',
+      },
+      {
+        name: 'DevConnect',
+        path: '/devconnect',
+        pathName: 'devconnect',
+        icon: 'material-symbols:deployed-code-outline',
+      },
     ],
   },
 ];
